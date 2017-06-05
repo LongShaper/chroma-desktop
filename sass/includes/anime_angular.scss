@@ -1,0 +1,88 @@
+@import "bourbon";
+/*---
+-----------
+ANGULAR 1.3.0 Animate enter and leave screen
+-----------
+---*/
+
+
+.ngIncludeItem {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    animation-duration: .25s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+.noAnime {
+    animation-duration: 0s;
+    -webkit-animation-duration: 0s;
+}
+/* When the page enters, slide it from the right */
+.ngIncludeItem.ng-enter {
+    animation-name: slideFromRight;
+    -webkit-animation-name: slideFromRight;
+}
+/* When the page enters and moveToLeft is true, slide it from the left(out of the user view) to the right (left corner) */
+.ngIncludeItem.moveToLeft.ng-enter {
+    animation-name: slideFromLeft;
+    -webkit-animation-name: slideFromLeft;
+}
+/* When the page leaves, slide it to left(out of the user view) from the left corner,
+    in other words slide it from the left(out of the view) to the left corner but in reverse order */
+.ngIncludeItem.ng-leave {
+    animation-name: slideFromLeft;
+    animation-direction: reverse;
+    -webkit-animation-name: slideFromLeft;
+    -webkit-animation-direction: reverse;
+}
+/* When the page leaves, slide it to the right(out of the user view) from the the left corner,
+    in other words, slide it from the right but in reverse order  */
+.ngIncludeItem.moveToLeft.ng-leave {
+    animation-name: slideFromRight;
+    animation-direction: reverse;
+    -webkit-animation-name: slideFromRight;
+    -webkit-animation-direction: reverse;
+}
+
+@include keyframes(slideFromRight) {
+  0% {
+  @include transform(translate3d(100%,0,0));
+  }
+  100% {
+  @include transform(translate3d(0,0,0));
+  }
+}
+@include keyframes (slideFromLeft)  {
+  0% {
+  @include transform(translate3d(-100%,0,0));
+  }
+  100% {
+  @include transform(translate3d(0,0,0));
+  }
+}
+
+/*---
+-----------
+ANGULAR 1.3.0 Animate DELETE listcolor enter and leave
+-----------
+---*/
+
+.listcolors_el.ng-enter.ng-enter-active, 
+.listcolors_el.ng-leave {
+    opacity: 1;
+    @include transition(opacity 200ms linear);
+}
+
+/* Remove animation */
+.listcolors_el.ng-leave.ng-leave-active, 
+.listcolors_el.ng-enter {
+    opacity: 0;
+    @include transition(opacity 200ms linear);
+}

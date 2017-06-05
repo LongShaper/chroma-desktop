@@ -1,0 +1,181 @@
+@import 'bourbon';
+
+/*---
+-- Stylesheet
+---- includes/uob1.html
+---- includes/uob2.html
+---- includes/uob3.html
+---- includes/uob4.html
+---- includes/uob5.html
+---*/
+
+.container{
+  width: 82%;
+  position: relative;
+  margin: 0 auto;
+  height: 87%;
+
+  .content-img{
+    display: block;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: 120px;
+    background:rgba(0,0,0,.15);
+
+    &::before,&::after{
+      content:"";
+      display:block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 500px;
+
+
+    }
+    &::before{
+      z-index: 10;
+      -webkit-box-shadow:inset 0px 0 7px 2px rgba(0,0,0,.25);
+      box-shadow:inset 0px 0 7px 2px rgba(0,0,0,.25);
+      
+    }
+
+  }
+}
+
+.screen-uob{
+  color: white;
+  text-align: center;
+
+  h2{
+    font-size: 1.953em;
+    font-family: 'linottesemibold', sans-serif;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  p{
+    font-size: 1.04em;
+    line-height: 1.5em;
+    font-family: 'linotteregular', sans-serif;
+    font-weight: normal;
+    text-align: left;
+    letter-spacing:0.02em;
+    color:white;
+  }
+  .btn-next{
+    font-size: 1em;
+    font-family: 'quicksandbold', sans-serif;
+    color: white;
+    padding: 0.875em 2.93em;
+    letter-spacing:.08em;
+    margin: 0 auto;
+
+    border-radius: 40px;
+    position: relative;
+    margin-top: 30px;
+    display:inline-block;
+
+    @include linear-gradient(145deg, #003759 5%, #01263E 95%);
+    -webkit-box-shadow: 0px 0 8px rgba(0,0,0,.3);
+    box-shadow: 0px 0 8px rgba(0,0,0,.3);
+  }
+  
+  .btn-next--end{
+    padding: 0.875em 2.3125em;
+    text-decoration: none;
+  }
+}
+
+
+.btn-skip{
+  font-size: 1em;
+  font-family: 'quicksandbold', sans-serif;
+  color: white;
+  display: block;
+  line-height: 50px;
+  width: 50px;
+  text-decoration: none;
+  position: absolute;
+  top:3%;
+  right: 10%;
+  z-index: 10;
+}
+
+
+.nav-indicator{
+  position: absolute;
+  bottom: 4.5%;
+  display: inline-block;
+  left:50%;
+  @include transform(translateX(-50%));
+  
+  &_el{
+    &::after{
+      position:relative;
+      content:"";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      float: left;
+      margin-left: 8px;
+      background: rgba(0,0,0,.3);
+
+      transition: .5s ease;
+    }
+  }
+
+  .indicator{
+    position: absolute;
+    display: block;
+    width: 28px;
+    height: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    background: white;
+    transition:transform .5s ease;
+
+    @include transform(translate3d(0px,0,0));
+  }
+
+  &_el:nth-child(2)::after{
+    margin-left: 0;
+  }
+  &_el--active{
+    &::after{
+      margin-right: 18px;
+    }
+  }
+
+  &_el--active:first-child::before{
+    @include transform(translate3d(0px,0,0));
+  }
+  &_el--active:nth-child(2)::before{
+    @include transform(translate3d(18px,0,0));
+  }
+  &_el--active:nth-child(3)::before{
+    @include transform(translate3d(36px,0,0));
+  }
+  &_el--active:nth-child(4)::before{
+    @include transform(translate3d(54px,0,0));
+  }
+  &_el--active:nth-child(5)::before{
+    @include transform(translate3d(72px,0,0));
+  }
+
+}
+
+.screen-uob--1,.screen-uob--2{
+  @include radial-gradient(circle at 50% -25%, #EF5470 10%, #B9283B);
+}
+.screen-uob--3{
+  @include radial-gradient(circle at 50% -25%, #61EF7A 10%, #29BE3C);
+}
+.screen-uob--4,.screen-uob--5{
+  @include radial-gradient(circle at 50% -25%, #507EED 10%, #3C47B2);
+}

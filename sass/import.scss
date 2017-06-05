@@ -1,0 +1,21 @@
+//Preset files
+@import url(preset/normalize.css);
+@import url(preset/fonts.css);
+
+//Global
+@import 'global.scss';
+
+@import 'includes/picker.scss';
+@import 'includes/colors.scss';
+@import 'includes/mainnav.scss';
+@import 'includes/uob.scss';
+@import 'includes/filter.scss';
+@import 'includes/first.scss';
+
+//Includes
+@import 'includes/anime_angular.scss';
+@import 'includes/anime_uob.scss';
+@import 'includes/anime.scss';
+
+//Special cases
+@import 'includes/whitecase.scss';

@@ -1,0 +1,31 @@
+<section class="screen screen--picker" ng-swipe-right="page.selectScreen(1)" ng-controller="filterCtrl">
+    <div class="first" ng-swipe-right='cancelSwipe($event)'>
+      <div class="align_center">
+          <h2 class="title title--filter">Supervision</h2>
+          <p class="smalltitle">Tu es passé en mode <b>Supervision !</b></p>
+          <p class="content"><span class="green">Les zones foncées (noir)</span> à travers l’écran correspondent à la présence de la couleur que tu as choisis de mieux discerner.</p>
+          <a class="btnFirst" href="">J'ai compris !</a>
+      </div>
+    </div>
+    <div class="bg"></div>
+    <div class="blend_more" style="background-color: #000000"></div>
+    <div id="colorinfo">
+        <p id="colorfilter_content" style="border-color:white;">
+    	<i id="colorfilter_content--name">Choisis une couleur</i>
+    	</p>
+
+        <a href="" class="btnpopup">Mes couleurs</a>
+    </div>
+    <div class="popupfilter">
+    	<header><h2>Mes couleurs</h2></header>
+    	<ul class="filtercolors">
+    		<li ng-repeat="color in colorData track by $index" class="filtercolors_el" on-finish-render="ngRepeatFinishedFilter" ng-click='pickfilter()' ng-controller="addFilter">
+				<i class="filtercolors_el--sample" style='background: {{color.hexa}}'>{{color.hexa}}</i>
+				<p class='filtercolors_el--nickname'>{{color.nickname}}</p>
+    		</li>
+    	</ul>
+
+    	
+    </div>
+
+</section>

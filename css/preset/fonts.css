@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'linottebold';
+  src: url("../../fonts/linotte_bold-webfont.woff2") format("woff2"), url("../../fonts/linotte_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'linottelight';
+  src: url("../../fonts/linotte_light-webfont.woff2") format("woff2"), url("../../fonts/linotte_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'linotteregular';
+  src: url("../../fonts/linotte_regular-webfont.woff2") format("woff2"), url("../../fonts/linotte_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'linottesemibold';
+  src: url("../../fonts/linotte_semi_bold-webfont.woff2") format("woff2"), url("../../fonts/linotte_semi_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'quicksandbold';
+  src: url("../../fonts/quicksand-bold-webfont.woff2") format("woff2"), url("../../fonts/quicksand-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'quicksandlight';
+  src: url("../../fonts/quicksand-light-webfont.woff2") format("woff2"), url("../../fonts/quicksand-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'quicksandregular';
+  src: url("../../fonts/quicksand-regular-webfont.woff2") format("woff2"), url("../../fonts/quicksand-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }

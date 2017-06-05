@@ -1,0 +1,35 @@
+<section class="screen screen--picker" ng-swipe-left="page.selectScreen(2)" ng-swipe-right="page.selectScreen(0)" ng-controller="pickerCtrl">
+    <div class="first" ng-swipe-left='cancelSwipe($event)' ng-swipe-right='cancelSwipe($event)'>
+        <div class="align_center">
+            <h2 class="title">Oh!</h2>
+            <p class="smalltitle">Il semblerait que c'est <b>ta première fois !</b></p>
+            <p class="content">Pour cette demo navigateur web de chroma, je t’invite à prélever les couleurs en <span class="green">cliquant</span> sur l’image.</p>
+            <img src="img/picto_touch.svg" alt="picto qui illustre l'action de cliquer" />
+            <a class="btnFirst" href="">J'ai compris !</a>
+        </div>
+    </div>
+    <canvas id="canvas" width="360" height="640"></canvas>
+    <div class="bg"></div>
+    <div id="notifadd" ng-click="page.selectScreen(0)">
+        <i id='notifadd_color' style='background: #FFFFFF'>#FFFFFF</i>
+        <p id='notifadd_name'>Prélève</p>
+        <p id='notifadd_txt'>a été ajouté dans vos couleurs</p>
+    </div>
+    <div class="pickerzone">
+        <span class="pickerzone_preview" style="border-color:#FFFFFF;"></span>
+        <span class="pickerzone_axe-x"></span>
+        <span class="pickerzone_axe-y"></span>
+    </div>
+    <div id="colorinfo">
+        <p id="colorinfo_content" style="border-color:#FFFFFF;">
+        	<i id="colorinfo_content--sample" style="background:#FFFFFF;">#FFFFFF</i>
+            <i id="colorinfo_content--name">Prélève</i>
+        </p>
+        <a href="" id="colorinfo_add">add</a>
+    </div>
+    <div id="rgbvalue">
+        <span id="red">45</span>
+        <span id="green">50</span>
+        <span id="blue">60</span>
+    </div>
+</section>

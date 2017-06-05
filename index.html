@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <title>Chroma</title>
+    <link rel="stylesheet" type="text/css" href="css/import.css" />
+</head>
+
+<body>
+    <div class="filter">
+        <header class="header" ng-include="'includes/header.html'"></header>
+
+        <!-- wapper for desktop demo -->
+            <div id="screenWapper" class="load">
+                <div ng-controller="uobCtrl as page">
+
+                    <!-- Call angular ngIncludes Screen -->
+                    <div class="ngIncludeItem" ng-include="page.ngIncludeSelected.url" ng-init="ngLoaded = true" ng-class="{'moveToLeft' : page.moveToLeft, 'noAnime' : page.Transition, loaded: ngLoaded}"></div>
+
+                    <a href="indexdemo.html" class="btn-skip">Passer</a>
+                    <nav class="nav-indicator">
+                        <span class="indicator"></span>
+                        <span class="nav-indicator_el" ng-class='{"nav-indicator_el--active" : page.ngIncludeSelected.index == 0}'></span>
+                        <span class="nav-indicator_el" ng-class='{"nav-indicator_el--active" : page.ngIncludeSelected.index == 1}'></span>
+                        <span class="nav-indicator_el" ng-class='{"nav-indicator_el--active" : page.ngIncludeSelected.index == 2}'></span>
+                        <span class="nav-indicator_el" ng-class='{"nav-indicator_el--active" : page.ngIncludeSelected.index == 3}'></span>
+                        <span class="nav-indicator_el" ng-class='{"nav-indicator_el--active" : page.ngIncludeSelected.index == 4}'></span>
+                    </nav>
+
+                </div><!-- ng controller -->
+            </div><!-- end screenWapper -->
+
+        <footer class="footer" ng-include="'includes/footer.html'"></footer>
+    </div><!-- end filter -->
+
+        <script type="text/javascript" src="js/library/jquery.js"></script>
+        <script type="text/javascript" src="js/library/angular.js"></script>
+        <script type="text/javascript" src="js/library/angular-touch.js"></script>
+        <script type="text/javascript" src="js/library/angular-animate.js"></script>
+        <script type="text/javascript" src="js/library/hammer.js"></script>
+        <script type="text/javascript" src="js/library/hammerjquery.js"></script>
+
+        <script type="text/javascript" src="js/ntc.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/uobCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/pickerCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/colorsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/actionsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/filterCtrl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+@import 'bourbon';
+.first{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 81%;
+	height: 101%;
+	padding:0 10%;
+	background: rgba(0,0,0,.92);
+	opacity: 0;
+	z-index: 100;
+	@include transform(scale(0));
+	color:white;
+	font-family: "quicksandregular", sans-serif;
+	text-align: center;
+
+	.align_center{
+		margin-top: 35%;
+	}
+	b{
+		display: block;
+		font-family: "quicksandbold",sans-serif
+	}
+	.title{
+		font-family: "linottebold", sans-serif;
+		font-size: 3.052em;
+		color:#41E541;
+		margin-bottom: 2px;
+	}
+	.green{
+		font-family: "quicksandbold", sans-serif;
+		color:#41E541;
+	}
+	.title--couleurs{
+		text-indent: -9999px;
+		width: 25px;
+		height: 64px;
+        background: url(../img/icon_colors--title.svg) no-repeat center;
+        background-size: cover;
+        margin: 0 auto;
+	}
+	.title--filter{
+		text-indent: -9999px;
+		width: 90px;
+		height: 33px;
+        background: url(../img/icon_filter--title.svg) no-repeat center;
+        background-size: cover;
+        margin: 0 auto 16px;
+	}
+	.smalltitle{
+		color:#41E541;
+		font-size: 1.25em;
+		margin-bottom: 26px;
+	}
+	.content{
+		line-height: 1.5em;
+		text-align: left;
+	}
+	a{
+		color:white;
+		font-family: "quicksandbold",sans-serif;
+		border:2px solid white;
+		border-radius: 30px;
+		display: block;
+		width: 180px;
+		height: 40px;
+		line-height: 40px;
+		bottom: 16%;
+		left:50%;
+		@include transform(translateX(-50%));
+    	position: absolute;
+	}
+	img{
+		margin-top: 40px;
+	}
+}
+.first--out{
+  	@include animation(disappearnopop .3s ease-out forwards);
+}
+.first--active{
+	opacity: 1;
+  	@include animation(appearpop .4s ease-in forwards);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <title>Chroma</title>
+    <link rel="stylesheet" type="text/css" href="css/import.css" />
+</head>
+
+<body>
+    <div class="filter">
+      <header class="header" ng-include="'includes/header.html'"></header>
+      <!-- wapper for desktop demo -->
+      <div id="screenWapper">
+        <div ng-controller="mainCtrl as page">
+          
+          <!-- Call angular ngIncludes Screen -->
+          <div class="ngIncludeItem" ng-include="page.ngIncludeSelected.url" ng-class="{'moveToLeft' : page.moveToLeft, 'noAnime' : page.Transition}"></div>
+
+          <nav class="nav" ng-class='{"nav--colors" : page.ngIncludeSelected.index == 0, "nav--smaller" : page.ngIncludeSelected.index == 0 || page.ngIncludeSelected.index == 2}'>
+
+            <button class="nav_el nav_el--colors" ng-click='page.selectScreen(0)' ng-class='{"active--colors" : page.ngIncludeSelected.index == 0}'>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                  <path class="svg_borderflask" d="M24.3,14.8h11.4v28.5c0,3.2-2.6,5.7-5.7,5.7s-5.7-2.5-5.7-5.7C24.3,43.3,24.3,14.8,24.3,14.8z"/>
+                  <path class="svg_liquidflask" d="M24.3,31.3v12c0,3.2,2.6,5.7,5.7,5.7s5.7-2.6,5.7-5.7v-12H24.3z"/>
+                  <path class="svg_borderflask" d="M22.4,12.9c0-1,0.8-1.9,1.9-1.9h11.4c1,0,1.9,0.8,1.9,1.9c0,1-0.8,1.9-1.9,1.9H24.3C23.2,14.8,22.4,14,22.4,12.9z"/>
+              </svg>
+              <i class="nav_label">Couleurs</i>
+            </button>
+            <!-- end colors -->
+
+            <button class="nav_el nav_el--picker" ng-click='page.selectScreen(1);' ng-class='{"active--picker" : page.ngIncludeSelected.index == 1}'>
+                <a href="#" class="takePictureButton" ng-class='{"takePictureButton--ON" : page.ngIncludeSelected.index == 1}'></a>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;">
+                    <circle class="svg_borderpicker" cx="30" cy="30" r="27"/>
+                    <path class="svg_droppicker" d="M30,6.5C17,6.5,6.5,17,6.5,30S17,53.5,30,53.5S53.5,43,53.5,30S43,6.5,30,6.5z M30,40.9c-3.6,0-6.6-3-6.6-6.6s6-14.8,6-14.8c0.4-0.6,0.9-0.6,1.1,0c0,0,6,11.1,6,14.8S33.6,40.9,30,40.9z"/>
+                </svg>
+            </button>
+            <!-- end picker -->
+
+            <button class="nav_el nav_el--filter" ng-click='page.selectScreen(2)' ng-class='{"active--filter" : page.ngIncludeSelected.index == 2}'>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                <ellipse class="svg_glass" cx="17.1" cy="30" rx="8.4" ry="7.9"/>
+                <polyline class="svg_bridge" points="25.8,30.6 34.2,30.6 34.2,28.6 25.8,28.6 25.8,30.6 "/>
+                <ellipse class="svg_glass" cx="42.9" cy="30" rx="8.4" ry="7.9"/>
+              </svg>
+              <i class="nav_label">Supervision</i>
+            </button>
+            <!-- end filter -->
+
+          </nav><!-- end nav -->
+        </div><!-- ng controller -->
+      </div><!-- end screenWapper -->
+
+      <footer class="footer" ng-include="'includes/footer.html'"></footer>
+  </div><!-- end filter -->
+
+        <script type="text/javascript" src="js/library/jquery.js"></script>
+        <script type="text/javascript" src="js/library/angular.js"></script>
+        <script type="text/javascript" src="js/library/angular-touch.js"></script>
+        <script type="text/javascript" src="js/library/angular-animate.js"></script>
+        <script type="text/javascript" src="js/library/hammer.js"></script>
+        <script type="text/javascript" src="js/library/hammerjquery.js"></script>
+
+        <script type="text/javascript" src="js/ntc.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/pickerCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/colorsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/actionsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/filterCtrl.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+/*---
+-- PREVENT WHITE HEXA
+---*/
+
+.sample--white{
+    &::before{
+        background: url(../img/icon_colors--black.svg) no-repeat center center;
+        background-size: 96%;
+    }
+}
+.sampleinfo--white{
+    border:1px solid black;
+    box-sizing: border-box;
+}
+.icon--white{
+      .icon{
+      border:1px solid black;
+      box-sizing: border-box;
+      color:#343534;
+      background-image: url(../img/icon_drop--black.svg); 
+      }
+      span{
+        color:#343534 !important;
+      }
+}

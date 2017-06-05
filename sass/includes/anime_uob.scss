@@ -1,0 +1,44 @@
+/*---
+-- Animations for
+---- includes/uob1.html 
+---- includes/uob2.html 
+---- includes/uob3.html 
+---- includes/uob4.html 
+---- includes/uob5.html 
+---*/
+
+.loaded .container{
+  .content-img{
+      &--uob1::after{
+        background: url(../img/uob_1.svg) no-repeat center;
+      }
+
+      &--uob2::after{
+        background: url(../img/uob_2.png) no-repeat left center;
+        opacity: 1;
+        background-size: 89%;
+
+      }
+      &--uob3::after{
+        background: url(../img/uob_3.png) no-repeat left center;
+        opacity: 1;
+        background-size: 91%;
+
+      }
+      &--uob4::after{
+        background: url(../img/uob_4.png) no-repeat left center;
+        opacity: 1;
+        background-size: 96%;
+
+      }
+      &--uob5::after{
+        background: url(../img/uob_5.png) no-repeat left center;
+        opacity: 1;
+        background-size: 101%;
+
+      }
+
+
+  }
+}
+

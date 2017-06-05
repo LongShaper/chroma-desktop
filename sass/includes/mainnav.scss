@@ -1,0 +1,220 @@
+@import 'bourbon';
+/*---
+-- Stylesheet 
+---- MAIN NAV 
+---*/
+
+/*Enable Take Picture Button WHEN ON picker.html screen with angular*/
+.takePictureButton{
+  &--ON{
+    position: absolute;
+    display: block;
+    width: 95%;
+    height: 98%;
+    z-index: 100;
+    border-radius: 400px;
+    left:50%;
+    top:55%;
+    @include transform(translate(-50%,-50%));
+  } 
+  &--OFF{
+    display: none;
+  }
+}
+
+.nav{
+  height: 60px;
+  width: 85%;
+  margin-left: 7.5%;
+  padding-bottom: 2vh;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  z-index: 20;
+  @include transition(.25s ease);
+
+  &::before{
+    content:"";
+    display: block;
+    width: 200vw;
+    left: -50vw;
+    height: 18vh;
+    position: absolute;
+    bottom: -10vh;
+    z-index: 0;
+
+    @include linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.6) 200%);
+  }
+  &_el{
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    color:white;
+    font-size: 0.64em;
+    font-family: 'linottesemibold', sans-serif;
+    text-decoration: none;
+    position: absolute;
+    opacity: .5;
+
+    &--colors{
+        left:0;
+        width: 40px;
+        @include transition(.25s ease);
+
+        .nav_label{
+          display: block;
+          margin-top: -2%;
+          position: relative;
+        }
+
+            .svg_borderflask{
+              fill:none;
+              stroke:#FFFFFF;
+              stroke-width:2;
+              stroke-miterlimit:10;
+            }
+            .svg_liquidflask{
+              fill:#FFFFFF;
+            }
+    }
+
+    &--picker{
+      width: 23.5%;
+      bottom:35%;
+      @include transition(.25s ease);
+      @include transform(translateX(-50%));
+
+        .svg_borderpicker{
+          fill:none;
+          stroke:#FFFFFF;
+          stroke-width:2;
+          stroke-linecap:round;
+          stroke-linejoin:round;
+          stroke-miterlimit:10;
+        }
+        .svg_droppicker{
+          fill:#FFFFFF;
+        }
+    }
+
+    &--filter{
+        right:0;
+        width: 46px;
+
+        @include transition(.25s ease);
+
+        .nav_label{
+          display: block;
+          margin-top: -13%;
+          margin-left: -4px;
+          position: relative;
+        }
+            .svg_glass{
+              fill:none;
+              stroke:#FFFFFF;
+              stroke-width:2;
+              stroke-miterlimit:10;
+            }
+            .svg_bridge{
+              fill:#FFFFFF;
+            }
+    }
+    
+  }
+
+  /*---
+  TOUCH ON colors or filter CHANGE Nav INTO Nav--smaller
+  ---*/
+  &--smaller{
+    width: 55%;
+    margin-left: 22.5%;
+
+    .nav_el--colors{
+      left:5px;
+      .nav_label{
+        margin-top: -13%;
+      }
+
+    }
+    .nav_el--picker{
+      width: 28%;
+      bottom:15%;
+    }
+    .nav_el--filter{
+      .nav_label{
+        margin-top: -22%;
+      }
+    }
+  }
+
+  /*---
+  ONLY ONTOUCH colors CHANGE Nav INTO Nav--colors
+  ---*/
+  &--colors{
+    .nav_el--picker{
+      opacity: .2;
+
+        .svg_borderpicker{
+          stroke:#000;
+        }
+        .svg_droppicker{
+          fill:#000;
+        }
+    }
+
+    .nav_el--filter{
+        right:0;
+        opacity: .2;
+        color:black;
+
+        .svg_glass{
+          stroke:#000;
+        }
+        .svg_bridge{
+          fill:#000;
+        }
+        
+    }
+  }
+
+  
+  /*---
+  Active style for nav icon
+  ---*/
+  .active--colors{
+      opacity: 1;
+      width: 52px;
+      margin-top: 4px;
+        .nav_label{
+          text-indent: -9999px;
+        }
+        .svg_borderflask{
+          stroke:#6254C0;
+          stroke-width:2.5;
+        }
+        .svg_liquidflask{
+          fill:#6254C0;
+        }
+  }
+
+  .active--filter{
+    opacity: 1;
+    width: 58px;
+    margin-top: 0px;
+    right: -6px;
+    .nav_label{
+        text-indent: -9999px;
+    }
+        .svg_glass{
+          stroke:#56D457;
+          stroke-width:2.8;
+        }
+        .svg_bridge{
+          fill:#56D457;
+        }
+  }
+  
+  .active--picker{
+      opacity: 1;
+  }
+}
