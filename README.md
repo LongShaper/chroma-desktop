@@ -1,6 +1,4 @@
-# chroma - Détecte les couleurs
-(version dekstop)
-
+# chroma - Détecte les couleurs (version dekstop)
 developped & designed by http://longchen.be
 
 Cette version de l'app est destinée à l'affichage desktop
